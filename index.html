@@ -30,7 +30,7 @@
 			"ask": "https://www.ask.com/web",
 		}
 		// console.log(actions[selectedEngine]);
-		searchForm.setAttribute('action', actions[selectedEngine]);
+		searchForm.setAttribute('action', actions[selectedEngine.value]);
 		// console.log(searchForm.getAttribute('action'));
 		});
     });
@@ -47,9 +47,7 @@
 	<label>bing<input type="radio" name="engine" value="bing"></label>
 	<label>	
 		ask<input type="radio" name="engine" value="ask"></label>
-	<label>
-		<input type="button" value="Go!" id="submitButton">
-	</label>
+	<button>Go!</button>
 	</form>
 
 </body>
