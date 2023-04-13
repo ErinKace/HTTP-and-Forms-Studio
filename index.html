@@ -4,8 +4,23 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-    window.addEventListener("load", function(){
+		function setSearchEngine() {
+		let searchForm = document.getElementById("searchForm");
+		let selectedEngine = document.querySelector("input[name=engine]");
+		let actions = {
+			"google":"https://www.google.com/search",
+			"duckDuckGo": "https://duckduckgo.com/",
+			"bing": "https://www.bing.com/search",
+			"ask": "https://www.ask.com/web",
+		}
+		searchForm.setAttribute('action', actions["selectedEngine"]);
+		console.log(searchForm.getAttribute('action'));
+		}
+		
+    window.addEventListener("load", function() {
+		let searchForm = document.getElementById("searchForm");
         // TODO: register the handler
+		searchForm.addEventListener('submit', setSearchEngine());
     });
 	</script>
 </head>
@@ -14,6 +29,15 @@
 
 	<form id="searchForm">
     <!-- TODO: add form elements -->
+	<input type="text" name="q" id="">
+	<label>google<input type="radio" name="engine" id="google" value="google"checked></label>
+	<label>duckDuckGo<input type="radio" name="engine" id="duckDuckGo" value="duckDuckGo"></label>
+	<label>bing<input type="radio" name="engine" id="bing" value="bing"></label>
+	<label>	
+		ask<input type="radio" name="engine" id="ask" value="ask"></label>
+	<label>
+		<input type="button" value="Go!" id="submitButton">
+	</label>
 	</form>
 
 </body>
